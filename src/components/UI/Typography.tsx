@@ -20,9 +20,11 @@ type Props = {
 export type TypoTypes = keyof typeof typoClasses
 
 export const typoClasses = {
-  p: cn('text-lg', 'font-medium'),
+  h1: cn('text-[80px] xl:text-6xl sm:text-4xl', '!leading-[1.1] sm:!leading-[1.2]', 'font-extrabold', 'tracking-[-0.5px]'),
+  p: cn('text-lg xl:text-base', '!leading-[1.6]', 'font-medium'),
 } as const
 
+export const H1 = createTypography('h1')
 export const P = createTypography('p')
 
 const variants = {

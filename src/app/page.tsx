@@ -1,3 +1,9 @@
+import Hero from '~~/index/Hero'
+
 export default function IndexPage() {
-  return <div>arenawebsecurity.net</div>
+  return (
+    <div>
+      <Hero />
+    </div>
+  )
 }
