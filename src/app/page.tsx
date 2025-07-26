@@ -1,9 +1,14 @@
+import Container from '~/Global/Container'
 import Hero from '~~/index/Hero'
 
 export default function IndexPage() {
   return (
-    <div>
+    <>
       <Hero />
-    </div>
+
+      <Container>
+        <div>content</div>
+      </Container>
+    </>
   )
 }
