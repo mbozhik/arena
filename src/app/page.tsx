@@ -1,5 +1,6 @@
 import Container from '~/Global/Container'
 import Hero from '~~/index/Hero'
+import Partners from '~~/index/Partners'
 
 export default function IndexPage() {
   return (
@@ -7,7 +8,7 @@ export default function IndexPage() {
       <Hero />
 
       <Container>
-        <div>content</div>
+        <Partners />
       </Container>
     </>
   )
