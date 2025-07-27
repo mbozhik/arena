@@ -18,6 +18,8 @@ export default {
 
       purple: {
         highlight: '#BEA0FF',
+        course: '#381D74',
+        border: '#604A90',
       },
 
       transparent: colors.transparent,
