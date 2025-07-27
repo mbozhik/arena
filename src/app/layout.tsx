@@ -4,6 +4,8 @@ import '@/app/globals.css'
 
 import {cn} from '@/lib/utils'
 
+import {SanityLive} from '@/sanity/lib/live'
+
 import Header from '~/Global/Header'
 
 export default function RootLayout({
@@ -16,6 +18,8 @@ export default function RootLayout({
       <body className={cn(plusJakartaSans.variable, 'bg-background text-foreground font-sans', 'antialiased')}>
         <Header />
         {children}
+
+        <SanityLive />
       </body>
     </html>
   )
