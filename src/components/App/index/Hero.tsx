@@ -16,7 +16,7 @@ export default function Hero() {
     <section data-section="hero-index" className={cn('min-h-screen sm:px-4', 'relative grid place-items-center')}>
       <div className={cn('flex flex-col items-center gap-12 xl:gap-10 sm:gap-8', 'text-center')}>
         <div className="space-y-6">
-          <H1 className="text-white">
+          <H1>
             <span className="text-purple-highlight">Arena Web Security</span> <br className="sm:hidden" />— the Hacker’s Arena
           </H1>
 

@@ -6,8 +6,8 @@ export const BOX = {
 }
 
 export const CONTAINER = {
-  spacing: 'space-y-28 xl:space-y-20 sm:space-y-10',
-  padding: 'pb-16 sm:pb-10',
+  spacing: 'space-y-28 xl:space-y-16 sm:space-y-10',
+  padding: 'pb-[15vh] sm:pb-[10vh]',
   offset: 'pt-[25vh] sm:pt-[17vh]',
 }
 
