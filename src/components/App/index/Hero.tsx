@@ -8,6 +8,7 @@ import {cn} from '@/lib/utils'
 
 import Image from 'next/image'
 import {H1, P} from '~/UI/Typography'
+import Button from '~/UI/Button'
 import Background from '~/Global/Background'
 
 export default function Hero() {
@@ -25,9 +26,7 @@ export default function Hero() {
         </div>
 
         <div className={cn('w-full', 'flex sm:flex-col items-center justify-center gap-10 xl:gap-6')}>
-          <button className={cn('block px-16 xl:px-12 py-6 xl:py-4 sm:py-3.5 sm:w-full', 'bg-gradient-to-r from-[#CA82FA] via-[#875BE7] to-[#3B70E9] rounded-full sm:rounded-3xl')}>
-            <P className="text-white font-semibold">Apply now</P>
-          </button>
+          <Button text="Apply now" />
 
           <div className="flex items-center gap-2">
             <div className="flex -space-x-4 sm:-space-x-2">
