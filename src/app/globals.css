@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.ts';
 
+/* sanity studio */
+#sanity {
+  @apply relative z-[999];
+}
+
 /* partners marquee */
 
 .animate-marquee {
