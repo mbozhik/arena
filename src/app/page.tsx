@@ -7,7 +7,7 @@ export default function IndexPage() {
     <>
       <Hero />
 
-      <Container className="pt-20">
+      <Container offset={false} className="pt-20 xl:pt-16">
         <Partners />
       </Container>
     </>

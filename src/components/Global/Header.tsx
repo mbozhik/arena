@@ -18,7 +18,7 @@ export default function Header() {
 
         <div className={cn('sm:hidden', 'flex-1', 'flex justify-around')}>
           {WEBSITE_PATHS.map((path) => (
-            <Link href={`/${path.toLowerCase()}`} key={path}>
+            <Link href={path === 'Home' ? '/' : `/${path.toLowerCase()}`} key={path}>
               <P offset={0} className={cn('font-light', 'hover:opacity-80 duration-200')}>
                 {path}
               </P>
