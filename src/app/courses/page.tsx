@@ -3,6 +3,7 @@ import {getCourses} from '@/sanity/lib/requests'
 import Container from '~/Global/Container'
 import {H2, P} from '~/UI/Typography'
 import Grid from '~~/courses/Grid'
+import Background from '~/Global/Background'
 
 export default async function CoursesPage() {
   const courses = await getCourses()
@@ -21,6 +22,8 @@ export default async function CoursesPage() {
       </div>
 
       <Grid data={allCourses} />
+
+      <Background page="others" />
     </Container>
   )
 }

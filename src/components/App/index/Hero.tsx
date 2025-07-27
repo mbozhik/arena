@@ -1,5 +1,3 @@
-import HeroImage from '$/index/hero.png'
-import HeroImageMobile from '$/index/hero-mobile.png'
 import RatingImage from '$/index/rating/1.png'
 import RatingImage2 from '$/index/rating/2.png'
 import RatingImage3 from '$/index/rating/3.png'
@@ -10,12 +8,13 @@ import {cn} from '@/lib/utils'
 
 import Image from 'next/image'
 import {H1, P} from '~/UI/Typography'
+import Background from '~/Global/Background'
 
 export default function Hero() {
   return (
     <section data-section="hero-index" className={cn('min-h-screen sm:px-4', 'relative grid place-items-center')}>
       <div className={cn('flex flex-col items-center gap-12 xl:gap-10 sm:gap-8', 'text-center')}>
-        <div className="space-y-6">
+        <div className="space-y-6 sm:mt-12">
           <H1>
             <span className="text-purple-highlight">Arena Web Security</span> <br className="sm:hidden" />— the Hacker’s Arena
           </H1>
@@ -26,7 +25,7 @@ export default function Hero() {
         </div>
 
         <div className={cn('w-full', 'flex sm:flex-col items-center justify-center gap-10 xl:gap-6')}>
-          <button className={cn('block px-16 xl:px-12 py-6 xl:py-4 sm:w-full', 'bg-gradient-to-r from-[#CA82FA] via-[#875BE7] to-[#3B70E9] rounded-full')}>
+          <button className={cn('block px-16 xl:px-12 py-6 xl:py-4 sm:py-3.5 sm:w-full', 'bg-gradient-to-r from-[#CA82FA] via-[#875BE7] to-[#3B70E9] rounded-full sm:rounded-3xl')}>
             <P className="text-white font-semibold">Apply now</P>
           </button>
 
@@ -49,8 +48,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <Image quality={100} className={cn('sm:hidden', 'absolute inset-0 -z-20', 'size-full object-cover')} src={HeroImage} alt="" />
-        <Image quality={100} className={cn('hidden sm:block', 'absolute inset-0 -z-20', 'size-full object-cover')} src={HeroImageMobile} alt="" />
+        <Background page="index" />
+
+        {/* <Image quality={100} className={cn('sm:hidden', 'absolute inset-0 -z-20', 'size-full object-cover')} src={HeroImage} alt="" />
+        <Image quality={100} className={cn('hidden sm:block', 'absolute inset-0 -z-20', 'size-full object-cover')} src={HeroImageMobile} alt="" /> */}
       </div>
     </section>
   )
