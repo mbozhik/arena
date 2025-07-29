@@ -1,5 +1,3 @@
-'use client'
-
 import {cn} from '@/lib/utils'
 
 import Link from 'next/link'
@@ -18,9 +16,11 @@ type Props = {
   onClick?: () => void
 }
 
+export const GRADIENT = 'bg-gradient-to-r from-[#CA82FA] via-[#875BE7] to-[#3B70E9]'
+
 export const BUTTON = {
   base: 'block w-fit px-16 xl:px-12 py-6 xl:py-4 sm:py-3.5 sm:w-full rounded-full sm:rounded-3xl text-center cursor-pointer duration-300',
-  primary: 'bg-gradient-to-r from-[#CA82FA] via-[#875BE7] to-[#3B70E9]',
+  primary: GRADIENT,
   secondary: '',
 }
 

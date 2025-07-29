@@ -48,9 +48,6 @@ export default function Hero() {
         </div>
 
         <Background page="index" />
-
-        {/* <Image quality={100} className={cn('sm:hidden', 'absolute inset-0 -z-20', 'size-full object-cover')} src={HeroImage} alt="" />
-        <Image quality={100} className={cn('hidden sm:block', 'absolute inset-0 -z-20', 'size-full object-cover')} src={HeroImageMobile} alt="" /> */}
       </div>
     </section>
   )
