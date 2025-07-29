@@ -15,7 +15,7 @@ import {cn} from '@/lib/utils'
 
 import Image from 'next/image'
 import Marquee from '~/Module/Marquee'
-import {H3, P} from '~/UI/Typography'
+import {H3} from '~/UI/Typography'
 
 export default function Partners() {
   const partners = [PartnersImage, PartnersImage2, PartnersImage3, PartnersImage4, PartnersImage5, PartnersImage6, PartnersImage7, PartnersImage8, PartnersImage9, PartnersImage10]

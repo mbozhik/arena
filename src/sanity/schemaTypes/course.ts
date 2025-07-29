@@ -1,7 +1,7 @@
 import {Book} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
-const CATEGORIES = ['Cyber Security', 'Development', 'Tech', 'Data Science', 'Freelance']
+export const CATEGORIES = ['Cyber Security', 'Development', 'Tech', 'Data Science', 'Freelance']
 
 export const course = defineType({
   name: 'course',

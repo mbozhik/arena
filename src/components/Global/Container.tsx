@@ -6,11 +6,10 @@ export const BOX = {
 }
 
 export const CONTAINER = {
-  spacing: 'space-y-28 xl:space-y-16 sm:space-y-10',
-  padding: 'pb-[15vh] sm:pb-[10vh]',
+  spacing: 'space-y-28 xl:space-y-20 sm:space-y-10',
   offset: 'pt-[25vh] sm:pt-[17vh]',
 }
 
 export default function Container({children, offset = true, className}: {children: React.ReactNode; offset?: boolean; className?: string}) {
-  return <main className={cn(BOX.container, [CONTAINER.spacing, CONTAINER.padding, offset && CONTAINER.offset], className)}>{children}</main>
+  return <main className={cn(BOX.container, [CONTAINER.spacing, offset && CONTAINER.offset], className)}>{children}</main>
 }

@@ -1,10 +1,12 @@
+'use client'
+
 import {cn} from '@/lib/utils'
 
 import Link from 'next/link'
 import {P} from '~/UI/Typography'
 
 type Props = {
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'none'
 
   children?: React.ReactNode
   text?: string | undefined
@@ -16,14 +18,14 @@ type Props = {
   onClick?: () => void
 }
 
-const BUTTON = {
-  base: 'block w-fit px-16 xl:px-12 py-6 xl:py-4 sm:py-3.5 sm:w-full rounded-full sm:rounded-3xl cursor-pointer',
+export const BUTTON = {
+  base: 'block w-fit px-16 xl:px-12 py-6 xl:py-4 sm:py-3.5 sm:w-full rounded-full sm:rounded-3xl text-center cursor-pointer duration-300',
   primary: 'bg-gradient-to-r from-[#CA82FA] via-[#875BE7] to-[#3B70E9]',
   secondary: '',
 }
 
 export default function Button({variant = 'primary', children, text, to, target = '_self', className, onClick}: Props) {
-  const buttonStyles = cn(BUTTON.base, BUTTON[variant], className)
+  const buttonStyles = cn(BUTTON.base, variant !== 'none' && BUTTON[variant], className)
 
   if (to) {
     return (
