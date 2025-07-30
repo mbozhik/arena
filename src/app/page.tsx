@@ -1,9 +1,10 @@
 import {getCourses} from '@/sanity/lib/requests'
 
-import Container from '~/Global/Container'
+import Container, {BOX} from '~/Global/Container'
 import Hero from '~~/index/Hero'
 import Partners from '~~/index/Partners'
 import Courses from '~~/index/Courses'
+import Services from '~~/index/Services'
 
 export default async function IndexPage() {
   const courses = await getCourses()
@@ -16,6 +17,8 @@ export default async function IndexPage() {
         <Partners />
         <Courses data={courses} />
       </Container>
+
+      <Services container={BOX.container} />
     </>
   )
 }
