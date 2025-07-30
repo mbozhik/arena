@@ -4,7 +4,7 @@ import Link from 'next/link'
 import {P} from '~/UI/Typography'
 
 type Props = {
-  variant?: 'primary' | 'secondary' | 'none'
+  variant?: 'primary' | 'secondary' | 'muted' | 'none'
 
   children?: React.ReactNode
   text?: string | undefined
@@ -22,6 +22,7 @@ export const BUTTON = {
   base: 'block w-fit px-16 xl:px-12 py-6 xl:py-4 sm:py-3.5 sm:w-full rounded-full sm:rounded-3xl text-center cursor-pointer duration-300',
   primary: GRADIENT,
   secondary: '',
+  muted: 'bg-[#BFA5F8] text-white',
 }
 
 export default function Button({variant = 'primary', children, text, to, target = '_self', className, onClick}: Props) {

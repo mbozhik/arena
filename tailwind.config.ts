@@ -14,7 +14,10 @@ export default {
       background: '#100739',
       foreground: '#D3D3F4',
 
-      white: '#FFFFFF',
+      white: {
+        DEFAULT: '#FFFFFF',
+        purple: '#CFCFF1',
+      },
 
       purple: {
         highlight: '#BEA0FF',
