@@ -20,8 +20,8 @@ type Props = {
 export type TypoTypes = keyof typeof TYPO
 
 export const TYPO = {
-  h1: cn('text-[80px] xl:text-6xl sm:text-4xl', '!leading-[1.1] sm:!leading-[1.2]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
-  h2: cn('text-[70px] xl:text-6xl sm:text-4xl', '!leading-[1.1] sm:!leading-[1.2]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
+  h1: cn('text-[80px] xl:text-6xl sm:text-4xl', '!leading-[1.25]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
+  h2: cn('text-[70px] xl:text-6xl sm:text-4xl', '!leading-[1.25]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
   h3: cn('text-3xl xl:text-2xl', 'font-bold'),
   h6: cn('text-[22px] xl:text-xl', 'font-bold'),
   p: cn('text-lg xl:text-base', '!leading-[1.6]', 'font-medium'),
