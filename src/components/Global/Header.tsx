@@ -12,6 +12,12 @@ import {P} from '~/UI/Typography'
 export const WEBSITE_PATHS = ['Home', 'About', 'Courses', 'Services', 'Blog', 'Gallery', 'Contact']
 
 export default function Header() {
+  function getPath(path: string) {
+    if (path === 'Home') return '/'
+    if (path === 'Blog') return 'https://www.hackers.institute'
+    return `/${path.toLowerCase()}`
+  }
+
   return (
     <header className={cn('fixed inset-0 z-[99]', 'pt-12 xl:pt-8 sm:pt-4 w-full h-fit')}>
       <div className={cn(BOX.header, 'px-12 py-6 xl:px-8 xl:py-5 sm:px-6 sm:py-4', 'flex justify-between items-center gap-32 xl:gap-24', 'bg-background border border-foreground rounded-full sm:rounded-2xl')}>
@@ -21,7 +27,7 @@ export default function Header() {
 
         <div className={cn('sm:hidden', 'flex-1', 'flex justify-around')}>
           {WEBSITE_PATHS.map((path) => (
-            <Link href={path === 'Home' ? '/' : `/${path.toLowerCase()}`} key={path}>
+            <Link href={getPath(path)} target={path === 'Blog' ? '_blank' : '_self'} key={path}>
               <P offset={0} className={cn('font-light', 'hover:opacity-80 duration-200')}>
                 {path}
               </P>
