@@ -5,9 +5,10 @@ import FacebookIcon from '$/socials/facebook.svg'
 import LinkedinIcon from '$/socials/linkedin.svg'
 import YoutubeIcon from '$/socials/youtube.svg'
 
-import {ArrowRight, MapPin, Phone, Mail} from 'lucide-react'
+import {ArrowRight} from 'lucide-react'
 
 import {WEBSITE_PATHS} from '~/Global/Header'
+import {CONTACTS} from '@/lib/constants'
 import {BOX} from '~/Global/Container'
 import {GRADIENT} from '~/UI/Button'
 
@@ -32,40 +33,6 @@ const SOCIALS = {
   youtube: {
     link: 'https://www.youtube.com/channel/arena-web-security',
     icon: YoutubeIcon,
-  },
-}
-
-const CONTACTS = {
-  location: {
-    icon: MapPin,
-    items: [
-      {
-        link: 'https://maps.app.goo.gl/7JznEHWYrwBRKdnC8',
-        text: 'House No: 1, Block: B Banasree, Main Road, Rampura, Dhaka - 1219',
-      },
-    ],
-  },
-  tel: {
-    icon: Phone,
-    items: [
-      {
-        link: 'tel:+8801310333444',
-        text: '+8801310333444',
-      },
-      {
-        link: 'tel:+8801885841489',
-        text: '+8801885841489',
-      },
-    ],
-  },
-  mail: {
-    icon: Mail,
-    items: [
-      {
-        link: 'mailto:info@arenawebsecurity.net',
-        text: 'info@arenawebsecurity.net',
-      },
-    ],
   },
 }
 
@@ -131,21 +98,25 @@ export default function Footer() {
           <H6>Contact Us</H6>
 
           <div className="space-y-6">
-            {Object.values(CONTACTS).map((contact, idx) => (
-              <div className="grid grid-cols-6 items-center xl:gap-10 sm:gap-0 sm:pr-4" key={idx}>
-                <contact.icon className={cn('col-span-1', 'size-8 aspect-square')} strokeWidth={1.5} />
+            {Object.entries(CONTACTS)
+              .filter(([key]) => key !== 'time')
+              .map(([idx, contact]) => (
+                <div className="flex items-center w-fit gap-6 xl:gap-4 sm:gap-6 sm:pr-4" key={idx}>
+                  <div className="size-8 aspect-square grid place-items-center">
+                    <contact.icon className="size-8 aspect-square" strokeWidth={1.5} />
+                  </div>
 
-                <div className="col-span-5 space-y-1">
-                  {contact.items.map((item) => (
-                    <Link className="group" href={item.link} target="_blank" rel="noopener noreferrer" key={item.link}>
-                      <SPAN offset={0} className={cn('font-normal', 'group-hover:underline')}>
-                        {item.text}
-                      </SPAN>
-                    </Link>
-                  ))}
+                  <div className="col-span-5 space-y-1">
+                    {contact.items.map((item) => (
+                      <Link className="group text-wrap max-w-[10ch]" href={item.link} target="_blank" rel="noopener noreferrer" key={item.link}>
+                        <SPAN offset={0} className={cn('font-normal text-wrap', 'group-hover:underline')}>
+                          {item.text}
+                        </SPAN>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
