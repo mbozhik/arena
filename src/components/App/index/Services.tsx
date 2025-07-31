@@ -52,7 +52,7 @@ export default function Services({container}: {container: string}) {
       <div className={cn('space-y-16 xl:space-y-12 sm:space-y-6', 'py-16 xl:py-12 sm:py-6')}>
         <div className={cn(container, 'space-y-6 xl:space-y-4 sm:space-y-2')}>
           <H2>
-            Our <span className="text-purple-highlight">Services</span>
+            Our <mark>Services</mark>
           </H2>
 
           <P>Get motivation from leaders and see your success from the window!</P>

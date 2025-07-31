@@ -9,7 +9,7 @@ export default function Action({container}: {container: string}) {
       <div className={cn(container, 'flex justify-between items-center sm:flex-col sm:items-start sm:gap-10', 'py-16 xl:py-12 sm:py-8', 'px-20 xl:px-16 sm:px-6')}>
         <div className="space-y-6 xl:space-y-4 sm:space-y-4">
           <H2 className="max-w-[20ch] !leading-[1.25]">
-            Join our <span className="text-purple-highlight">cyber security</span> learning platform today
+            Join our <mark>cyber security</mark> learning platform today
           </H2>
 
           <P>Let Arena Web Security be your gateway to a high-impact cybersecurity career.</P>

@@ -27,13 +27,13 @@ const STATISTICS = [
   },
 ]
 
-export default function Statistics({container}: {container: string}) {
+export default function Statistics({container, className}: {container?: string; className?: string}) {
   return (
-    <section data-section="statistics-index" className={cn(container, 'mt-28 xl:mt-20 sm:mt-16')}>
-      <div className={cn('space-y-16 xl:space-y-12 sm:space-y-6', 'py-16 xl:py-12 sm:py-6')}>
-        <div className="space-y-6 xl:space-y-4 sm:space-y-2">
+    <section data-section="statistics-index" className={cn(container, 'mt-28 xl:mt-20 sm:mt-16', className)}>
+      <div className={cn('space-y-12 xl:space-y-10 sm:space-y-6', 'py-16 xl:py-12 sm:py-6')}>
+        <div className="space-y-4 sm:space-y-2">
           <H2>
-            Company <span className="text-purple-highlight">Statistics</span>
+            Company <mark>Statistics</mark>
           </H2>
 
           <P>Statistics measures the whole progressing report which is organised by Arena Web Security.</P>

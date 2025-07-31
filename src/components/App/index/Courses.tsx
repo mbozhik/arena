@@ -23,7 +23,7 @@ export default function Courses({data}: {data: COURSE_QUERYResult}) {
       <div className="space-y-10 xl:space-y-8 sm:space-y-4">
         <div className="flex sm:flex-col items-center sm:items-start justify-between sm:gap-4">
           <H2>
-            Popular <span className="text-purple-highlight">Courses</span>
+            Popular <mark>Courses</mark>
           </H2>
 
           <div className={cn('flex flex-wrap sm:grid sm:grid-cols-2 sm:gap-1.5', 'p-2.5 xl:p-2 sm:p-1.5 sm:w-full bg-[#28204D] rounded-full sm:rounded-3xl')}>
@@ -43,7 +43,7 @@ export default function Courses({data}: {data: COURSE_QUERYResult}) {
           <Grid data={featuredCoursesByCategory} />
         ) : (
           <div className="text-center py-12">
-            No featured courses available for <span className="text-purple-highlight font-semibold underline underline-offset-2">{selectedCategory}</span> category.
+            No featured courses available for <mark className="font-semibold underline underline-offset-2">{selectedCategory}</mark> category.
           </div>
         )}
       </div>

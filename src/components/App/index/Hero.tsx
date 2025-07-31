@@ -44,7 +44,7 @@ export default function Hero() {
       <div className={cn('flex flex-col items-center gap-12 xl:gap-10 sm:gap-8', 'text-center')}>
         <div className="space-y-6 sm:mt-12">
           <H1>
-            <span className="text-purple-highlight">Arena Web Security</span> <br className="sm:hidden" />— the Hacker’s Arena
+            <mark>Arena Web Security</mark> <br className="sm:hidden" />— the Hacker’s Arena
           </H1>
 
           <P animated={false} className="max-w-[85ch] xl:max-w-[70ch] sm:max-w-none sm:line-clamp-4">

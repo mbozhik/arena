@@ -6,6 +6,11 @@
   @apply relative z-[999];
 }
 
+/* text highlight */
+mark {
+  @apply text-purple-highlight bg-transparent;
+}
+
 /* partners marquee */
 
 .animate-marquee {
