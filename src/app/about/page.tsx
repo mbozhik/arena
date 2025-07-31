@@ -1,7 +1,7 @@
 import {cn} from '@/lib/utils'
 
 import Container from '~/Global/Container'
-import {H2, H3, P, typoClasses} from '~/UI/Typography'
+import {H2, H3, P, TYPO} from '~/UI/Typography'
 import Background from '~/Global/Background'
 import Statistics from '~~/index/Statistics'
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
       <div className="space-y-4">
         <H3>We have proudly worked with:</H3>
 
-        <div className={cn(typoClasses.p)}>
+        <div className={cn(TYPO.p)}>
           <ul className="list-disc list-inside space-y-1.5">
             <li>Government entities like the Ministry of ICT</li>
             <li>Bangladesh Air Force</li>

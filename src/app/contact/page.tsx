@@ -6,22 +6,23 @@ import Link from 'next/link'
 import Container from '~/Global/Container'
 import {H2, P, SPAN} from '~/UI/Typography'
 import Background from '~/Global/Background'
+import Form from '~~/contact/Form'
 
 export default function ContactPage() {
   return (
     <Container className="space-y-20 xl:space-y-14">
-      <div className={cn('px-14 py-12 grid grid-cols-2', 'bg-purple-course rounded-4xl sm:rounded-3xl')}>
-        <div className="space-y-10">
+      <div className={cn('px-14 py-12 sm:p-6 grid grid-cols-2 sm:grid-cols-1 sm:gap-10', 'bg-purple-course rounded-4xl sm:rounded-3xl')}>
+        <div className="space-y-10 sm:space-y-6">
           <H2 className={cn('text-[40px] xl:text-3xl sm:text-2xl', 'block text-purple-highlight')}>Get in Touch</H2>
 
           <P className="block">
             Have Questions? <br /> We'd Love to Hear from You!
           </P>
 
-          <div className={cn('mr-[50%] space-y-6', 'p-6 bg-white-purple text-purple-border rounded-3xl sm:rounded-2xl')}>
+          <div className={cn('mr-[50%] sm:mr-0 space-y-6', 'p-6 sm:py-8 bg-white-purple text-purple-border rounded-3xl sm:rounded-2xl')}>
             {Object.values(CONTACTS).map((contact, idx) => (
               <div className="flex items-center w-fit gap-6 xl:gap-4 sm:gap-6 sm:pr-4" key={idx}>
-                <div className="size-8 aspect-square grid place-items-center">
+                <div className="size-8 sm:size-6 aspect-square grid place-items-center">
                   <contact.icon className="size-8 aspect-square" strokeWidth={1.5} />
                 </div>
 
@@ -39,7 +40,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div></div>
+        <Form />
       </div>
 
       <Background page="others" />

@@ -17,9 +17,9 @@ type Props = {
   offset?: number
 } & (HTMLAttributes<HTMLHeadingElement> | HTMLAttributes<HTMLParagraphElement> | HTMLAttributes<HTMLSpanElement>)
 
-export type TypoTypes = keyof typeof typoClasses
+export type TypoTypes = keyof typeof TYPO
 
-export const typoClasses = {
+export const TYPO = {
   h1: cn('text-[80px] xl:text-6xl sm:text-4xl', '!leading-[1.1] sm:!leading-[1.2]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
   h2: cn('text-[70px] xl:text-6xl sm:text-4xl', '!leading-[1.1] sm:!leading-[1.2]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
   h3: cn('text-3xl xl:text-2xl', 'font-bold'),
@@ -104,7 +104,7 @@ function Typography({type, className, children, animated = true, by = 'line', of
 
   if (!animated) {
     return (
-      <Element className={cn(typoClasses[type], className)} {...props}>
+      <Element className={cn(TYPO[type], className)} {...props}>
         {children}
       </Element>
     )
@@ -132,7 +132,7 @@ function Typography({type, className, children, animated = true, by = 'line', of
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={wordContainerVariants} // Use word-specific container variants
-          className={cn(typoClasses[type], className)}
+          className={cn(TYPO[type], className)}
           {...(props as any)}
         >
           {content.map((segment, index) => {
@@ -159,7 +159,7 @@ function Typography({type, className, children, animated = true, by = 'line', of
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'} // trigger when in view
         variants={containerVariants}
-        className={cn(typoClasses[type], className)}
+        className={cn(TYPO[type], className)}
         {...(props as any)}
       >
         <span className="block overflow-hidden">
