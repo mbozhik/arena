@@ -23,6 +23,7 @@ export default {
         highlight: '#BEA0FF',
         course: '#381D74',
         border: '#604A90',
+        circle: '#D1BCFF',
       },
 
       transparent: colors.transparent,

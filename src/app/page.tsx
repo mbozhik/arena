@@ -5,6 +5,7 @@ import Hero from '~~/index/Hero'
 import Partners from '~~/index/Partners'
 import Courses from '~~/index/Courses'
 import Services from '~~/index/Services'
+import Statistics from '~~/index/Statistics'
 
 export default async function IndexPage() {
   const courses = await getCourses()
@@ -19,6 +20,7 @@ export default async function IndexPage() {
       </Container>
 
       <Services container={BOX.container} />
+      <Statistics container={BOX.container} />
     </>
   )
 }

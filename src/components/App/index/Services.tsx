@@ -1,7 +1,7 @@
 'use client'
 
 import {SERVICES} from '@/content'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 import {useMediaQuery} from '@/utils/use-media-query'
 import {cn} from '@/lib/utils'
@@ -13,7 +13,7 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 
 import {H2, H3, P} from '~/UI/Typography'
-import Button from '~/UI/Button'
+// import Button from '~/UI/Button'
 
 export default function Services({container}: {container: string}) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -78,7 +78,7 @@ export default function Services({container}: {container: string}) {
                 <div className={cn('relative', 'px-8 py-12 sm:px-4 sm:py-8 h-full', 'flex flex-col space-y-10 sm:space-y-6', 'bg-[#53329C] rounded-2xl text-center', 'transition-all duration-500 ease-out')} style={getSlideStyle(idx)}>
                   <div className="flex flex-col items-center gap-6">
                     <div className={cn('p-2 sm:p-1.5 w-fit', 'border-2 border-[#FFFFFF60] border-dashed rounded-full ')}>
-                      <div className={cn('p-4 sm:p-2.5 w-fit', 'bg-[#D1BCFF] rounded-full')}>
+                      <div className={cn('p-4 sm:p-2.5 w-fit', 'bg-purple-circle rounded-full')}>
                         <service.icon className="size-12 xl:size-10 text-white" strokeWidth={1.5} />
                       </div>
                     </div>
