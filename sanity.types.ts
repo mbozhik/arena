@@ -162,14 +162,19 @@ export type AllSanitySchemaTypes = Course | SanityImagePaletteSwatch | SanityIma
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/requests.ts
 // Variable: COURSE_QUERY
-// Query: *[_type == "course"]{        category, heading, description, duration, rating, featured, slug, image,    }
+// Query: *[_type == "course"]{        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline    }
 export type COURSE_QUERYResult = Array<{
   category: "Cyber Security" | "Data Science" | "Development" | "Freelance" | "Tech";
   heading: string;
   description: string;
+  information: null;
   duration: string;
   rating: "1" | "2" | "3" | "4" | "5";
   featured: boolean;
+  tags: null;
+  sections: null;
+  application: null;
+  instructors: null;
   slug: Slug;
   image: {
     asset?: {
@@ -183,16 +188,22 @@ export type COURSE_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
+  outline: null;
 }>;
 // Variable: COURSE_ITEM_QUERY
-// Query: *[_type == "course" && slug.current == $slug][0]{        category, heading, description, duration, rating, featured, slug, image,    }
+// Query: *[_type == "course" && slug.current == $slug][0]{        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline    }
 export type COURSE_ITEM_QUERYResult = {
   category: "Cyber Security" | "Data Science" | "Development" | "Freelance" | "Tech";
   heading: string;
   description: string;
+  information: null;
   duration: string;
   rating: "1" | "2" | "3" | "4" | "5";
   featured: boolean;
+  tags: null;
+  sections: null;
+  application: null;
+  instructors: null;
   slug: Slug;
   image: {
     asset?: {
@@ -206,13 +217,14 @@ export type COURSE_ITEM_QUERYResult = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  outline: null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "\n    *[_type == \"course\"]{\n        category, heading, description, duration, rating, featured, slug, image,\n    }": COURSE_QUERYResult;
-    "\n    *[_type == \"course\" && slug.current == $slug][0]{\n        category, heading, description, duration, rating, featured, slug, image,\n    }": COURSE_ITEM_QUERYResult;
+    "\n    *[_type == \"course\"]{\n        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline\n    }": COURSE_QUERYResult;
+    "\n    *[_type == \"course\" && slug.current == $slug][0]{\n        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline\n    }": COURSE_ITEM_QUERYResult;
   }
 }
