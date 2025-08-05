@@ -205,14 +205,7 @@
               },
               "optional": false
             },
-            "duration": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "string"
-              },
-              "optional": false
-            },
-            "course": {
+            "type": {
               "type": "objectAttribute",
               "value": {
                 "type": "string"

@@ -10,7 +10,7 @@ const GRID = {
 
 function Grid({className, children, ...props}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <section data-section="grid" className={cn('grid gap-20', GRID.root, className)} {...props}>
+    <section data-section="grid" className={cn('grid gap-16 xl:gap-2', 'sm:flex sm:flex-col sm:gap-8', GRID.root, className)} {...props}>
       {children}
     </section>
   )

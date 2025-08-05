@@ -37,8 +37,7 @@ export type Course = {
       regular: number;
       discounted?: number;
     };
-    duration: string;
-    course: string;
+    type: string;
     skill: string;
     class: string;
     language: string;
@@ -232,8 +231,7 @@ export type COURSE_QUERYResult = Array<{
       regular: number;
       discounted?: number;
     };
-    duration: string;
-    course: string;
+    type: string;
     skill: string;
     class: string;
     language: string;
@@ -305,8 +303,7 @@ export type COURSE_ITEM_QUERYResult = {
       regular: number;
       discounted?: number;
     };
-    duration: string;
-    course: string;
+    type: string;
     skill: string;
     class: string;
     language: string;

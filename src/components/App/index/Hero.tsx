@@ -8,30 +8,34 @@ import {cn} from '@/lib/utils'
 
 import Image from 'next/image'
 import {H1, P} from '~/UI/Typography'
-import Button from '~/UI/Button'
+import Button, {GRADIENT} from '~/UI/Button'
 import Background from '~/Global/Background'
 
-export function ActionHero({view}: {view: 'hero' | 'footer'}) {
+export function ActionHero({view}: {view: 'hero' | 'footer' | 'course'}) {
   const isHero = view === 'hero'
+  const isCourse = view === 'course'
+
   return (
-    <div className={cn('w-full', 'flex sm:flex-col items-center justify-center gap-10 xl:gap-6')}>
-      <Button variant={isHero ? 'primary' : 'muted'} text="Apply now" />
+    <div className={cn('w-full', 'flex sm:flex-col items-center justify-center gap-10 xl:gap-6', isCourse && 'w-full xl:gap-4')}>
+      <Button variant={isHero ? 'primary' : 'muted'} className={cn(isCourse && 'w-full', isCourse && GRADIENT)} text="Apply now" />
 
       <div className="flex items-center gap-2">
-        <div className="flex -space-x-4 sm:-space-x-2">
-          {[RatingImage, RatingImage2, RatingImage3].map((image, i) => {
-            return <Image className="size-14 xl:size-12 sm:size-10 object-contain" src={image} alt="" key={i} />
-          })}
-        </div>
+        {!isCourse && (
+          <div className="flex -space-x-4 sm:-space-x-2">
+            {[RatingImage, RatingImage2, RatingImage3].map((image, i) => {
+              return <Image className="size-14 xl:size-12 sm:size-10 object-contain" src={image} alt="" key={i} />
+            })}
+          </div>
+        )}
 
-        <div className="flex flex-col items-start gap-1">
+        <div className={cn('flex flex-col items-start gap-1', isCourse && 'items-center justify-center self-center justify-self-center')}>
           <div className="flex gap-0.25">
             {[...Array(5)].map((_, i) => {
               return <Star className={cn('size-5 xl:size-4 sm:size-3', isHero ? 'fill-purple-highlight text-purple-highlight' : 'fill-white-purple text-white-purple')} key={i} />
             })}
           </div>
 
-          <div className={cn('text-xs sm:text-[10px] font-semibold opacity-80', isHero ? 'text-white-purple' : 'text-white')}>( 10k+ Reviews )</div>
+          <div className={cn('text-xs sm:text-[10px] font-semibold opacity-80 text-nowrap', isHero ? 'text-white-purple' : 'text-white')}>( 10k+ Reviews )</div>
         </div>
       </div>
     </div>

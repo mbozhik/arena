@@ -23,6 +23,7 @@ export const TYPO = {
   h1: cn('text-[80px] xl:text-6xl sm:text-4xl', '!leading-[1.25]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
   h2: cn('text-[70px] xl:text-6xl sm:text-4xl', '!leading-[1.25]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
   h3: cn('text-3xl xl:text-2xl', 'font-bold'),
+  h4: cn('text-[60px] xl:text-5xl sm:text-4xl', '!leading-[1.25]', 'font-extrabold', 'tracking-[-0.5px]', 'text-white'),
   h6: cn('text-[22px] xl:text-xl', 'font-bold'),
   p: cn('text-lg xl:text-base', '!leading-[1.6]', 'font-medium'),
   span: cn('text-base xl:text-sm', '!leading-[1.4]', 'font-light'),
@@ -31,6 +32,7 @@ export const TYPO = {
 export const H1 = createTypography('h1')
 export const H2 = createTypography('h2')
 export const H3 = createTypography('h3')
+export const H4 = createTypography('h4')
 export const H6 = createTypography('h6')
 export const P = createTypography('p')
 export const SPAN = createTypography('span')

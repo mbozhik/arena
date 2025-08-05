@@ -103,12 +103,7 @@ export const course = defineType({
           validation: (Rule) => Rule.required(),
         },
         {
-          name: 'duration',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'course',
+          name: 'type',
           title: 'Course Type',
           type: 'string',
           validation: (Rule) => Rule.required(),
