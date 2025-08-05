@@ -22,9 +22,46 @@ export type Course = {
   category: "Cyber Security" | "Development" | "Tech" | "Data Science" | "Freelance";
   heading: string;
   description: string;
+  information: string;
   duration: string;
   rating: "1" | "2" | "3" | "4" | "5";
   featured: boolean;
+  tags: Array<string>;
+  sections: Array<{
+    title: string;
+    descriptors: Array<string>;
+    _key: string;
+  }>;
+  application?: {
+    fee: {
+      regular: number;
+      discounted?: number;
+    };
+    duration: string;
+    course: string;
+    skill: string;
+    class: string;
+    language: string;
+  };
+  instructors: Array<{
+    name: string;
+    role: string;
+    expertise: string;
+    experience: string;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _key: string;
+  }>;
   slug: Slug;
   image: {
     asset?: {
@@ -38,6 +75,19 @@ export type Course = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  outline: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -162,14 +212,51 @@ export type AllSanitySchemaTypes = Course | SanityImagePaletteSwatch | SanityIma
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/requests.ts
 // Variable: COURSE_QUERY
-// Query: *[_type == "course"]{        category, heading, description, duration, rating, featured, slug, image,    }
+// Query: *[_type == "course"]{        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline    }
 export type COURSE_QUERYResult = Array<{
   category: "Cyber Security" | "Data Science" | "Development" | "Freelance" | "Tech";
   heading: string;
   description: string;
+  information: string;
   duration: string;
   rating: "1" | "2" | "3" | "4" | "5";
   featured: boolean;
+  tags: Array<string>;
+  sections: Array<{
+    title: string;
+    descriptors: Array<string>;
+    _key: string;
+  }>;
+  application: {
+    fee: {
+      regular: number;
+      discounted?: number;
+    };
+    duration: string;
+    course: string;
+    skill: string;
+    class: string;
+    language: string;
+  } | null;
+  instructors: Array<{
+    name: string;
+    role: string;
+    expertise: string;
+    experience: string;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _key: string;
+  }>;
   slug: Slug;
   image: {
     asset?: {
@@ -183,16 +270,66 @@ export type COURSE_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
+  outline: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
 }>;
 // Variable: COURSE_ITEM_QUERY
-// Query: *[_type == "course" && slug.current == $slug][0]{        category, heading, description, duration, rating, featured, slug, image,    }
+// Query: *[_type == "course" && slug.current == $slug][0]{        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline    }
 export type COURSE_ITEM_QUERYResult = {
   category: "Cyber Security" | "Data Science" | "Development" | "Freelance" | "Tech";
   heading: string;
   description: string;
+  information: string;
   duration: string;
   rating: "1" | "2" | "3" | "4" | "5";
   featured: boolean;
+  tags: Array<string>;
+  sections: Array<{
+    title: string;
+    descriptors: Array<string>;
+    _key: string;
+  }>;
+  application: {
+    fee: {
+      regular: number;
+      discounted?: number;
+    };
+    duration: string;
+    course: string;
+    skill: string;
+    class: string;
+    language: string;
+  } | null;
+  instructors: Array<{
+    name: string;
+    role: string;
+    expertise: string;
+    experience: string;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _key: string;
+  }>;
   slug: Slug;
   image: {
     asset?: {
@@ -206,13 +343,26 @@ export type COURSE_ITEM_QUERYResult = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  outline: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "\n    *[_type == \"course\"]{\n        category, heading, description, duration, rating, featured, slug, image,\n    }": COURSE_QUERYResult;
-    "\n    *[_type == \"course\" && slug.current == $slug][0]{\n        category, heading, description, duration, rating, featured, slug, image,\n    }": COURSE_ITEM_QUERYResult;
+    "\n    *[_type == \"course\"]{\n        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline\n    }": COURSE_QUERYResult;
+    "\n    *[_type == \"course\" && slug.current == $slug][0]{\n        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline\n    }": COURSE_ITEM_QUERYResult;
   }
 }

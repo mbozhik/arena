@@ -29,6 +29,12 @@ export const course = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'information',
+      type: 'text',
+      rows: 5,
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
       name: 'duration',
       type: 'string',
       validation: (Rule) => Rule.required(),
@@ -48,6 +54,126 @@ export const course = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'tags',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
+      name: 'sections',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'descriptors',
+              type: 'array',
+              of: [{type: 'string'}],
+              validation: (Rule) => Rule.required().min(1),
+            }),
+          ],
+        },
+      ],
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
+      name: 'application',
+      type: 'object',
+      fields: [
+        {
+          name: 'fee',
+          type: 'object',
+          fields: [
+            {
+              name: 'regular',
+              type: 'number',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'discounted',
+              type: 'number',
+            },
+          ],
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'duration',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'course',
+          title: 'Course Type',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'skill',
+          title: 'Skill Level',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'class',
+          title: 'Class Days',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'language',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+    defineField({
+      name: 'instructors',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'name',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'role',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'expertise',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'experience',
+              title: 'Years of Experience',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+        },
+      ],
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {
@@ -63,8 +189,20 @@ export const course = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'outline',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+        },
+      ],
+      options: {
+        layout: 'grid',
+      },
+      validation: (Rule) => Rule.required().min(1),
+    }),
   ],
-
   preview: {
     select: {
       heading: 'heading',

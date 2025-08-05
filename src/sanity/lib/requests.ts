@@ -49,11 +49,11 @@ async function fetchEntityItem<T>(query: string, params?: {slug?: string}, draft
 
 const COURSE_QUERY = defineQuery(`
     *[_type == "course"]{
-        category, heading, description, duration, rating, featured, slug, image,
+        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline
     }`)
 const COURSE_ITEM_QUERY = defineQuery(`
     *[_type == "course" && slug.current == $slug][0]{
-        category, heading, description, duration, rating, featured, slug, image,
+        category, heading, description, information, duration, rating, featured, tags, sections, application, instructors, slug, image, outline
     }`)
 
 const QUERIES = {
