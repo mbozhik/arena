@@ -8,7 +8,7 @@ import {urlFor} from '@/sanity/lib/image'
 import Link from 'next/link'
 import Image from 'next/image'
 import {H3, SPAN} from '~/UI/Typography'
-import {SP} from 'next/dist/shared/lib/utils'
+import Badge from '~/UI/Badge'
 
 export default function Grid({data}: {data: COURSE_QUERYResult}) {
   return (
@@ -27,9 +27,7 @@ export default function Grid({data}: {data: COURSE_QUERYResult}) {
                 <SPAN className="font-medium">{item.duration}</SPAN>
               </div>
 
-              <div className="px-4 py-1.5 sm:px-3 sm:py-1 bg-purple-border text-[#BAADEC] rounded-full">
-                <SPAN>{item.category}</SPAN>
-              </div>
+              <Badge variant="secondary">{item.category}</Badge>
             </div>
 
             <H3 className="flex-1">{item.heading}</H3>
