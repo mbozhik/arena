@@ -49,7 +49,7 @@ export default function Footer() {
             </H2>
 
             <P offset={0} className="font-normal">
-              <mark className="font-bold">Ready to join the legacy?</mark> Let Arena Web Security be your gateway to a high-impact cybersecurity career.
+              <span className="font-bold">Ready to join the legacy?</span> Let Arena Web Security be your gateway to a high-impact cybersecurity career.
             </P>
           </div>
 

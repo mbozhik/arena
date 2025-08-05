@@ -3,9 +3,9 @@ import {cn} from '@/lib/utils'
 import {H2, P} from '~/UI/Typography'
 import Button from '~/UI/Button'
 
-export default function Action({container}: {container: string}) {
+export default function Action({container, className}: {container: string; className?: string}) {
   return (
-    <section data-section="action-index" className={cn('relative', 'bg-[#22164D]', 'mt-28 xl:mt-20 sm:mt-16')}>
+    <section data-section="action-index" className={cn('relative', 'bg-[#22164D]', 'mt-28 xl:mt-20 sm:mt-16', className)}>
       <div className={cn(container, 'flex justify-between items-center sm:flex-col sm:items-start sm:gap-10', 'py-16 xl:py-12 sm:py-8', 'px-20 xl:px-16 sm:px-6')}>
         <div className="space-y-6 xl:space-y-4 sm:space-y-4">
           <H2 className="max-w-[20ch] !leading-[1.25]">
